@@ -13,10 +13,11 @@ namespace ConsoleApp2_calander_
                 Console.WriteLine("Today is " + dt);
                 Console.Write(dt[0]); Console.WriteLine(dt[1]);
 
-                //gets month into a int
+             
+
                 
-                
-                
+
+
                 //get month into an name 
                  string monthname = DateTime.Today.ToString("MMMM");
 
@@ -53,11 +54,27 @@ namespace ConsoleApp2_calander_
                     int monthx = Convert.ToInt32(month);
                        Console.WriteLine(month);
 
+                    string year;
+                    year = DateTime.Today.ToString("yyyy");
+                    int yearx = Convert.ToInt32(year);
+
                     //for checks change monthhx remove // 
-                    //monthx = 3;
-                    int daysinmonth;
-                    daysinmonth = Convert.ToInt32(day);
-                    Console.WriteLine(day + "check");
+                   /* monthx = 3;
+                    yearx = 3;
+                    */
+                    int daysinmonth = 31;
+                    
+                    if (yearx%4 == 0 && monthx == 2)
+                    {
+                        daysinmonth = 29;
+                    }
+                    else if (monthx == 2)
+                    {
+                        daysinmonth = 28;
+                    }
+
+                   
+                    
                    /* if (monthx == 7)
                     {
                         daysinmonth = 31;
@@ -65,7 +82,7 @@ namespace ConsoleApp2_calander_
                    */
                     switch (monthx)
                     {
-                        case 1:
+                     /*   case 1:
                             daysinmonth = 31;
                             break;
                         case 3:
@@ -84,6 +101,7 @@ namespace ConsoleApp2_calander_
                         case 11:
                             daysinmonth = 31;
                             break;
+                     */
                         //check for the ones that are 30 days
                         case 4:
                             daysinmonth = 30;
